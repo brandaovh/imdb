@@ -187,10 +187,11 @@ client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mo
 db = client['imdb']
 collection = db['imdb_movies']
 
-# Define Layout of App
+# Define Layout of App and adding server
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
                 suppress_callback_exceptions=True)
+server = app.server
 app.layout = html.Div([
     html.H1('Web Application connected to a Live Database', style={'textAlign': 'center'}),
     # interval activated once/week or when page refreshed
@@ -203,8 +204,6 @@ app.layout = html.Div([
     ], className='row'),
     dcc.Store(id='changed-cell')
 ])
-
-server = app.server
 
 # Display Datatable with data from Mongo database
 @app.callback(Output('mongo-datatable', component_property='children'),
