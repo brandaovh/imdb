@@ -14,7 +14,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://brandaovh:<password>@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -48,7 +48,7 @@ max_pages = 30
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://brandaovh:<password>@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Select a database and a collection to work with
@@ -86,7 +86,7 @@ for page in range(1, max_pages + 1):
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://brandaovh:<password>@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Select a database and a collection to work with
@@ -151,7 +151,7 @@ import pymongo
 from bson.objectid import ObjectId
 
 # Connect to your MongoDB server
-client = pymongo.MongoClient("mongodb+srv://brandaovh:<password>@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority")
 # Select the database and collection
 db = client['imdb']
 collection = db['imdb_movies']
