@@ -241,6 +241,10 @@ def update_d(cc, tabledata):
         # Convert tabledata back to DataFrame
         df = pd.DataFrame(tabledata)
 
+        # Convert columns to numeric if needed
+        df['vote_count'] = pd.to_numeric(df['vote_count'], errors='coerce')
+        df['popularity'] = pd.to_numeric(df['popularity'], errors='coerce')
+
         # Sort by 'vote_count' and 'popularity' and keep top 5
         top_vote_count = df.sort_values('vote_count', ascending=False).head(5)
         top_popularity = df.sort_values('popularity', ascending=False).head(5)
