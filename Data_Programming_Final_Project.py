@@ -243,8 +243,8 @@ def update_d(cc, tabledata):
         df = pd.DataFrame(tabledata)
 
         # Sort by 'vote_count' and 'popularity' and keep top 5
-        top_vote_count = df.sort_values('vote_count', ascending=False).head(5)
-        top_popularity = df.sort_values('popularity', ascending=False).head(5)
+        top_vote_count = df.sort_values('vote_count', ascending=False).iloc[:5]
+        top_popularity = df.sort_values('popularity', ascending=False).iloc[:5]
 
         # Build the Plots
         pie_fig = px.pie(top_vote_count, values='vote_count', names='title', color_discrete_sequence=px.colors.sequential.RdBu)
