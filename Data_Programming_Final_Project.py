@@ -247,19 +247,16 @@ def update_d(cc, tabledata):
         # Sort by 'vote_count' and 'popularity' and keep top 5
         top_vote_count = df.sort_values('vote_count', ascending=False).head(5)
         top_popularity = df.sort_values('popularity', ascending=False).head(5)
-        top_vote_average = df.sort_values('vote_average', ascending=False).head(5)
 
         # Build the Plots
-        pie_fig = px.pie(top_vote_count, values='vote_count', names='title', color_discrete_sequence=px.colors.sequential.RdBu)
-        hist_fig = px.histogram(top_popularity, x='original_language', y='popularity', color='original_language')
-        vote_average_fig = px.bar(top_vote_average, x='title', y='vote_average')
+        pie_fig = px.pie(top_vote_count, values='vote_count', names='original_title', color_discrete_sequence=px.colors.sequential.RdBu)
+        hist_fig = px.histogram(top_popularity, x='original_title', y='popularity')
 
         # Update layout for better visualization
-        pie_fig.update_layout(title_text='Top 5 Movies by Vote Count', title_x=0.5)
-        hist_fig.update_layout(title_text='Top 5 Movies by Popularity', title_x=0.5, xaxis_title='Original Language', yaxis_title='Popularity')
-        vote_average_fig.update_layout(title_text='Top 5 Movies by Vote Average', title_x=0.5, xaxis_title='Movie Title', yaxis_title='Vote Average')
+        pie_fig.update_layout(title_text='Top 5 Most Voted Movies', title_x=0.5)
+        hist_fig.update_layout(title_text='Top 5 Most Popular Movies', title_x=0.5, xaxis_title='Movie Title', yaxis_title='Vote Average')
 
-        return dcc.Graph(figure=pie_fig), dcc.Graph(figure=hist_fig), dcc.Graph(figure=vote_average_fig)
+        return dcc.Graph(figure=pie_fig), dcc.Graph(figure=hist_fig)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
