@@ -8,14 +8,13 @@
 
 # ## Step 1: Connect to MongoDB
 
-
-# In[1]:
+# In[2]:
 
 
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE"
+uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -49,7 +48,7 @@ max_pages = 30
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE"
+uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true"
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Select a database and a collection to work with
@@ -87,7 +86,7 @@ for page in range(1, max_pages + 1):
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE"
+uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true&"
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Select a database and a collection to work with
@@ -101,12 +100,6 @@ collection.insert_many(all_movies)
     #AS INTENDED IN THIS EXERCISE IS ONLY TO SHOWCASE THE KNOWLEDGE BUT WE ARE NOT GOING TO EXECUTE
     # OF COURSE INDENTATION WILL BE NEEDED FOR THE NEW LOOP
    # time.sleep(3600)
-
-
-# In[4]:
-
-
-movies_df
 
 
 # ##Code to delete Duplicates in MongoDB Cloud
@@ -145,8 +138,9 @@ for doc in results:
 
 
 # ##Step 3, making the WebApp with Dash & Plotly
+# 
 
-# In[ ]:
+# In[5]:
 
 
 import dash
@@ -157,7 +151,7 @@ import pymongo
 from bson.objectid import ObjectId
 
 # Connect to your MongoDB server
-client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE")
+client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true")
 # Select the database and collection
 db = client['imdb']
 collection = db['imdb_movies']
