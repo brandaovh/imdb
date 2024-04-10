@@ -8,14 +8,8 @@
 
 # ## Step 1: Connect to MongoDB
 
+
 # In[1]:
-
-
-# We install Pymongo Srv
-get_ipython().system('pip install "pymongo[srv]"')
-
-
-# In[2]:
 
 
 from pymongo.mongo_client import MongoClient
@@ -151,33 +145,8 @@ for doc in results:
 
 
 # ##Step 3, making the WebApp with Dash & Plotly
-# 
 
 # In[ ]:
-
-
-get_ipython().system('pip install dash')
-
-
-# In[ ]:
-
-
-get_ipython().system('pip install Plotly')
-
-
-# In[ ]:
-
-
-get_ipython().system('pip install pymongo')
-
-
-# In[ ]:
-
-
-get_ipython().system('pip install gunicorn')
-
-
-# In[5]:
 
 
 import dash
