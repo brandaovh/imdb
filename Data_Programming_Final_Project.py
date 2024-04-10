@@ -52,8 +52,8 @@ uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Select a database and a collection to work with
-db = client['imdb']
-collection = db['imdb_movies']
+db = client['movie_database']
+collection = db['movies']
 
 # while True: NOTE THAT THIS WHILE TRUE IS THE ONE THAT ACTIVATES THE ONE HOUR LOOP
 # AS INTENDED IN THIS EXERCISE IS ONLY TO SHOWCASE THE KNOWLEDGE BUT WE ARE NOT GOING TO EXECUTE IT.
@@ -90,8 +90,8 @@ uri = "mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Select a database and a collection to work with
-db = client['imdb']
-collection = db['imdb_movies']
+db = client['movie_database']
+collection = db['movies']
 
 # Insert the data into the collection
 collection.insert_many(all_movies)
@@ -112,7 +112,7 @@ from pymongo import MongoClient
 
 # Connect to MongoDB
 client = MongoClient(uri)
-db = client['imdb']
+db = client['movie_database']
 
 # Define the aggregation pipeline
 pipeline = [
@@ -152,8 +152,8 @@ from bson.objectid import ObjectId
 # Connect to your MongoDB server
 client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority")
 # Select the database and collection
-db = client["imdb"]
-collection = db["imdb_movies"]
+db = client['movie_database']
+collection = db['movies']
 
 # Define Layout of App
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
