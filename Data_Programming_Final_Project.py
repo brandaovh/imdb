@@ -175,8 +175,7 @@ app.layout = html.Div([
 
 # Display Datatable with data from Mongo database
 @app.callback(Output('mongo-datatable', component_property='children'),
-              Input('interval_db', component_property='n_intervals')
-              )
+              Input('interval_db', component_property='n_intervals'))
 def populate_datatable(n_intervals):
     # Convert the Collection (table) date to a pandas DataFrame
     df = pd.DataFrame(list(collection.find()))
@@ -186,16 +185,15 @@ def populate_datatable(n_intervals):
     df['genre_ids'] = df['genre_ids'].apply(lambda x: ', '.join(map(str, x)))
 
     return [
-       dash_table.DataTable(
-    id='our-table',
-    data=df.to_dict('records'),
-    columns=[{'id': p, 'name': p, 'editable': False} if p == '_id'
-             else {'id': p, 'name': p, 'editable': True}
-             for p in df],
-    page_size=10,  # Only display 10 rows at a time
-    style_table={'overflowX': 'auto', 'maxHeight': '500px', 'overflowY': 'auto'}
-)
-,
+        dash_table.DataTable(
+            id='our-table',
+            data=df.to_dict('records'),
+            columns=[{'id': p, 'name': p, 'editable': False} if p == '_id'
+                     else {'id': p, 'name': p, 'editable': True}
+                     for p in df],
+            page_size=10,  # Only display 10 rows at a time
+            style_table={'overflowX': 'auto', 'maxHeight': '500px', 'overflowY': 'auto'}
+        )
     ]
 
 
@@ -248,7 +246,7 @@ def update_d(cc, tabledata):
         # Build the Plots
         pie_fig = px.pie(top_vote_count, values='vote_count', names='title', color_discrete_sequence=px.colors.sequential.RdBu)
         hist_fig = px.histogram(top_popularity, x='title', y='popularity')
-        
+
         # Update layout for better visualization
         pie_fig.update_layout(title_text='Top 5 Movies by Vote Count', title_x=0.5)
         hist_fig.update_layout(title_text='Top 5 Movies by Popularity', title_x=0.5, xaxis_title='Title', yaxis_title='Popularity')
@@ -256,4 +254,4 @@ def update_d(cc, tabledata):
         return dcc.Graph(figure=pie_fig), dcc.Graph(figure=hist_fig)
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True)1
