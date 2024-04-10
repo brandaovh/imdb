@@ -249,8 +249,8 @@ def update_d(cc, tabledata):
         top_popularity = df.sort_values('popularity', ascending=False).head(5)
 
         # Build the Plots
-        pie_fig = px.pie(top_vote_count, values='vote_count', names='original_title', color_discrete_sequence=px.colors.sequential.RdBu)
-        hist_fig = px.histogram(top_popularity, x='original_title', y='popularity')
+        pie_fig = px.pie(top_vote_count, values='vote_count', names='title', color_discrete_sequence=px.colors.sequential.RdBu)
+        hist_fig = px.histogram(top_popularity, x='title', y='popularity')
 
         # Update layout for better visualization
         pie_fig.update_layout(title_text='Top 5 Most Voted Movies', title_x=0.5)
