@@ -248,11 +248,11 @@ def update_d(cc, tabledata):
 
         # Build the Plots
         pie_fig = px.pie(top_vote_count, values='vote_count', names='title', color_discrete_sequence=px.colors.sequential.RdBu)
-        hist_fig = px.histogram(top_popularity, x='original_language', y='popularity', color='original_language')
+        hist_fig = px.histogram(top_popularity, x='title', y='popularity')
 
         # Update layout for better visualization
         pie_fig.update_layout(title_text='Top 5 Movies by Vote Count', title_x=0.5)
-        hist_fig.update_layout(title_text='Top 5 Movies by Popularity', title_x=0.5, xaxis_title='Original Language', yaxis_title='Popularity')
+        hist_fig.update_layout(title_text='Top 5 Movies by Popularity', title_x=0.5, xaxis_title='Title', yaxis_title='Popularity')
 
         return dcc.Graph(figure=pie_fig), dcc.Graph(figure=hist_fig)
 
