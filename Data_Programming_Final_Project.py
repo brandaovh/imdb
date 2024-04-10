@@ -151,7 +151,7 @@ import pymongo
 from bson.objectid import ObjectId
 
 # Connect to your MongoDB server
-client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE")
+client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mongodb.net/?retryWrites=true&w=majority")
 # Select the database and collection
 db = client['imdb']
 collection = db['imdb_movies']
@@ -170,7 +170,6 @@ app.layout = html.Div([
     html.Div([
         html.Div(id='pie-graph', className='five columns'),
         html.Div(id='hist-graph', className='six columns'),
-        html.Div(id='vote-average-graph', className='six columns')
     ], className='row'),
     dcc.Store(id='changed-cell')
 ])
@@ -235,7 +234,6 @@ app.clientside_callback(
 @app.callback(
     Output("pie-graph", "children"),
     Output("hist-graph", "children"),
-    Output("vote-average-graph", "children"),
     Input("changed-cell", "data"),
     Input("our-table", "data"),
 )
@@ -250,16 +248,13 @@ def update_d(cc, tabledata):
 
         # Build the Plots
         pie_fig = px.pie(top_vote_count, values='vote_count', names='title', color_discrete_sequence=px.colors.sequential.RdBu)
-        hist_fig = px.histogram(top_popularity, x='title', y='popularity')
+        hist_fig = px.histogram(top_popularity, x='original_language', y='popularity', color='original_language')
 
         # Update layout for better visualization
-        pie_fig.update_layout(title_text='Top 5 Most Voted Movies', title_x=0.5)
-        hist_fig.update_layout(title_text='Top 5 Most Popular Movies', title_x=0.5, xaxis_title='Movie Title', yaxis_title='Vote Average')
+        pie_fig.update_layout(title_text='Top 5 Movies by Vote Count', title_x=0.5)
+        hist_fig.update_layout(title_text='Top 5 Movies by Popularity', title_x=0.5, xaxis_title='Original Language', yaxis_title='Popularity')
 
         return dcc.Graph(figure=pie_fig), dcc.Graph(figure=hist_fig)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-
-
