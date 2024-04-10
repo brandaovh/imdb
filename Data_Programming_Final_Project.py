@@ -204,6 +204,8 @@ app.layout = html.Div([
     dcc.Store(id='changed-cell')
 ])
 
+server = app.server
+
 # Display Datatable with data from Mongo database
 @app.callback(Output('mongo-datatable', component_property='children'),
               Input('interval_db', component_property='n_intervals')
