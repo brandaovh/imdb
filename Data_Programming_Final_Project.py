@@ -112,7 +112,7 @@ from pymongo import MongoClient
 
 # Connect to MongoDB
 client = MongoClient(uri)
-db = client['movie_database']
+db = client['imdb']
 
 # Define the aggregation pipeline
 pipeline = [
