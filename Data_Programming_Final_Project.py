@@ -254,4 +254,4 @@ def update_d(cc, tabledata):
         return dcc.Graph(figure=pie_fig), dcc.Graph(figure=hist_fig)
 
 if __name__ == '__main__':
-    app.run_server(debug=True)1
+    app.run_server(debug=True)
