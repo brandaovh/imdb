@@ -142,7 +142,6 @@ for doc in results:
 
 # In[5]:
 
-
 import dash
 from dash import html, dcc, Input, Output, State, dash_table
 import pandas as pd
@@ -176,8 +175,7 @@ app.layout = html.Div([
 
 # Display Datatable with data from Mongo database
 @app.callback(Output('mongo-datatable', component_property='children'),
-              Input('interval_db', component_property='n_intervals')
-              )
+              Input('interval_db', component_property='n_intervals'))
 def populate_datatable(n_intervals):
     # Convert the Collection (table) date to a pandas DataFrame
     df = pd.DataFrame(list(collection.find()))
@@ -187,16 +185,15 @@ def populate_datatable(n_intervals):
     df['genre_ids'] = df['genre_ids'].apply(lambda x: ', '.join(map(str, x)))
 
     return [
-       dash_table.DataTable(
-    id='our-table',
-    data=df.to_dict('records'),
-    columns=[{'id': p, 'name': p, 'editable': False} if p == '_id'
-             else {'id': p, 'name': p, 'editable': True}
-             for p in df],
-    page_size=10,  # Only display 10 rows at a time
-    style_table={'overflowX': 'auto', 'maxHeight': '500px', 'overflowY': 'auto'}
-)
-,
+        dash_table.DataTable(
+            id='our-table',
+            data=df.to_dict('records'),
+            columns=[{'id': p, 'name': p, 'editable': False} if p == '_id'
+                     else {'id': p, 'name': p, 'editable': True}
+                     for p in df],
+            page_size=10,  # Only display 10 rows at a time
+            style_table={'overflowX': 'auto', 'maxHeight': '500px', 'overflowY': 'auto'}
+        )
     ]
 
 
