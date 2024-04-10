@@ -193,7 +193,7 @@ client = pymongo.MongoClient("mongodb+srv://brandaovh:654123@cluster0.qswfw8s.mo
 db = client['imdb']
 collection = db['imdb_movies']
 
-# Define Layout of App and adding server
+# Define Layout of App and add server
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
                 suppress_callback_exceptions=True)
