@@ -171,6 +171,12 @@ get_ipython().system('pip install Plotly')
 get_ipython().system('pip install pymongo')
 
 
+# In[ ]:
+
+
+get_ipython().system('pip install gunicorn')
+
+
 # In[5]:
 
 
