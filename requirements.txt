@@ -1,9 +1,7 @@
 dash == 2.16.1
-dash-core-components
-dash-html-components
-dash-table
 gunicorn
-pandas == 2.0.3
+pandas
 plotly
 pymongo
 requests
+numpy
