@@ -4,8 +4,7 @@
 <p>This project involves fetching data from an API, storing it in MongoDB, visualizing the data using Dash, an processing it with Render.</p>
 
 <h2>Data Source</h2>
-<p>The data for this project is fetched from a remote API from IMDB that provides movie-related information.</p>
-<p>The data for this project is fetched from a remote <a href="https://developer.imdb.com/documentation">API from IMDB</a> that provides movie-related information.</p>
+<p>The data for this project is fetched live from a remote <a href="https://developer.imdb.com/documentation">API from IMDB</a> that provides movie-related information.</p>
 
 <h2>Motivation</h2>
 <p>The goal of this project is to demonstrate proficiency in handling data retrieval, storage, and visualization using Python and MongoDB.</p>
@@ -14,7 +13,7 @@
 <ul>
     <li>Jupyter Notebook</li>
     <li>Data storage in MongoDB</li>
-    <li>Data visualization using Dash and Plotly</li>
+    <li>Data visualization with Python using Dash and Plotly</li>
     <li>Deployment on Render</li>
     <li>Code hosting and version control using GitHub</li>
 </ul>
@@ -30,7 +29,7 @@
 </ul>
 
 <h2>Online Visualizations on Render</h2>
-<p>Explore the output files via link: <a href="https://imdb-app-6o3o.onrender.com">IMDB App Visualization*</a></p> (it might take a few minutes to load)
+<p>Explore the output files via link: <a href="https://imdb-app-6o3o.onrender.com">IMDB App Visualization</a></p> (It might take a few minutes to load)
 
 <h2>Contact Information</h2>
 <p>Feel free to reach out for questions or further discussion:</p>
