@@ -1,13 +1,10 @@
 <h1>Welcome</h1>
 
 <h2>Project Overview</h2>
-<p>This project involves fetching data from an API, storing it in MongoDB, visualizing the data using Dash, an processing it with Render.</p>
+<p>This project involves fetching data from an API, storing it in MongoDB, visualizing the data using Dash, and processing it with Render.</p>
 
 <h2>Data Source</h2>
 <p>The data for this project is fetched live from a remote <a href="https://developer.imdb.com/documentation">API from IMDB</a> that provides movie-related information.</p>
-
-<h2>Motivation</h2>
-<p>The goal of this project is to demonstrate proficiency in handling data retrieval, storage, and visualization using Python and MongoDB.</p>
 
 <h2>Tools Used</h2>
 <ul>
